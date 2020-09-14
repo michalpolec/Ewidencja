@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EwidencjaKierownikow));
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.createExcel = new System.Windows.Forms.Button();
             this.firstExcel = new System.Windows.Forms.Button();
@@ -195,7 +194,7 @@
             // 
             // logo
             // 
-            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.Image = global::Ewidencja.Properties.Resources.logo;
             this.logo.Location = new System.Drawing.Point(452, 222);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(336, 217);
@@ -203,7 +202,7 @@
             this.logo.TabIndex = 2;
             this.logo.TabStop = false;
             // 
-            // EwidencjaMaszynistow
+            // EwidencjaKierownikow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

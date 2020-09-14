@@ -206,8 +206,8 @@ namespace Ewidencja
             {
                 label6.Text = "Wczytywanie. Proszę czekać...";
                 LoadExcelFile(filePath);
-                FirstDriversAndTrains = LoadToListFirsAndSecondDrivers(6, 16, 33);
-                SecondDriversAndTrains = LoadToListFirsAndSecondDrivers(6, 16, 38);
+                FirstDriversAndTrains = LoadToListFirsAndSecondDrivers(6, 16, 41);
+                SecondDriversAndTrains = LoadToListFirsAndSecondDrivers(6, 16, 46);
                 label6.Text = "Poprawnie wczytano plik " + getFileName(filePath);
                 ClearMemory();
                 isThirdFileLoad = true;
