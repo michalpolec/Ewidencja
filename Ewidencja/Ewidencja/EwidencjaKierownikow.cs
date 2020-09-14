@@ -269,16 +269,16 @@ namespace Ewidencja
                 boxWithCreatingFile.Enabled = true;
             }
         }
-        private void SortByName(List<Person> driversList)
+        private void SortByName(List<Person> menagersList)
         {
-            driversList.Sort((x, y) => string.Compare(x.nameAndSurname, y.nameAndSurname));
+            menagersList.Sort((x, y) => string.Compare(x.nameAndSurname, y.nameAndSurname));
         }
-        private void ReplaceSymbol(List<Person> driversList)
+        private void ReplaceSymbol(List<Person> menagersList)
         {
-            for (int i = 0; i < driversList.Count; i++)
+            for (int i = 0; i < menagersList.Count; i++)
             {
-                String trains = driversList[i].vehicles;
-                driversList[i].vehicles = trains.Replace("-", " ");
+                String trains = menagersList[i].vehicles;
+                menagersList[i].vehicles = trains.Replace("-", " ");
             }
         }
 
