@@ -73,7 +73,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "MainMenu";
-            this.Text = "Ewidecja";
+            this.Text = "Ewidencja";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

@@ -26,11 +26,11 @@ namespace Ewidencja
         }
 
         private Boolean isFirstFileLoad = false, isSecondFileLoad = false, isThirdFileLoad = false;
-        public List<Person> AllDriversAndTrains { get; set; }
-        public List<Person> FirstDriversAndTrains { get; set; }
-        public List<Person> SecondDriversAndTrains { get; set; }
+        public List<Person> AllMenagersAndTrains { get; set; }
+        public List<Person> FirstMenagersAndTrains { get; set; }
+        public List<Person> SecondMenagersAndTrains { get; set; }
 
-        private List<Person> LoadToListAllDrivers(int firstRow, int firstColumn, int lastColumn)
+        private List<Person> LoadToListAllMenagers(int firstRow, int firstColumn, int lastColumn)
         {
             int rowCount = xlRange.Rows.Count;
 
@@ -64,7 +64,7 @@ namespace Ewidencja
 
             return list;
         }
-        private List<Person> LoadToListFirsAndSecondDrivers(int firstRow, int trainColumn, int Workers)
+        private List<Person> LoadToListFirsAndSecondMenagers(int firstRow, int trainColumn, int Workers)
         {
             int rowCount = xlRange.Rows.Count;
 
@@ -176,7 +176,7 @@ namespace Ewidencja
             {
                 label4.Text = "Wczytywanie. Proszę czekać...";
                 LoadExcelFile(filePath);
-                AllDriversAndTrains = LoadToListAllDrivers(2, 10, 16);
+                AllMenagersAndTrains = LoadToListAllMenagers(2, 10, 16);
                 label4.Text = "Poprawnie wczytano plik " + getFileName(filePath);
                 ClearMemory();
                 isFirstFileLoad = true;
@@ -191,7 +191,7 @@ namespace Ewidencja
             {
                 label5.Text = "Wczytywanie. Proszę czekać...";
                 LoadExcelFile(filePath);
-                AllDriversAndTrains.AddRange(LoadToListAllDrivers(2, 10, 16));
+                AllMenagersAndTrains.AddRange(LoadToListAllMenagers(2, 10, 16));
                 label5.Text = "Poprawnie wczytano plik " + getFileName(filePath);
                 ClearMemory();
                 isSecondFileLoad = true;
@@ -206,8 +206,8 @@ namespace Ewidencja
             {
                 label6.Text = "Wczytywanie. Proszę czekać...";
                 LoadExcelFile(filePath);
-                FirstDriversAndTrains = LoadToListFirsAndSecondDrivers(6, 16, 41);
-                SecondDriversAndTrains = LoadToListFirsAndSecondDrivers(6, 16, 46);
+                FirstMenagersAndTrains = LoadToListFirsAndSecondMenagers(6, 16, 41);
+                SecondMenagersAndTrains = LoadToListFirsAndSecondMenagers(6, 16, 46);
                 label6.Text = "Poprawnie wczytano plik " + getFileName(filePath);
                 ClearMemory();
                 isThirdFileLoad = true;
@@ -224,19 +224,19 @@ namespace Ewidencja
 
                 CreateExcelFiles(filePath);
 
-                ReplaceSymbol(AllDriversAndTrains);
-                SortByName(AllDriversAndTrains);
-                SaveListsToExcel(AllDriversAndTrains, 3, 2, 3);
+                ReplaceSymbol(AllMenagersAndTrains);
+                SortByName(AllMenagersAndTrains);
+                SaveListsToExcel(AllMenagersAndTrains, 3, 2, 3);
 
 
-                ReplaceSymbol(FirstDriversAndTrains);
-                SortByName(FirstDriversAndTrains);
-                ReverseSaveListsToExcel(FirstDriversAndTrains, 3, 5, 6);
+                ReplaceSymbol(FirstMenagersAndTrains);
+                SortByName(FirstMenagersAndTrains);
+                ReverseSaveListsToExcel(FirstMenagersAndTrains, 3, 5, 6);
 
 
-                ReplaceSymbol(SecondDriversAndTrains);
-                SortByName(SecondDriversAndTrains);
-                ReverseSaveListsToExcel(SecondDriversAndTrains, 3, 8, 9);
+                ReplaceSymbol(SecondMenagersAndTrains);
+                SortByName(SecondMenagersAndTrains);
+                ReverseSaveListsToExcel(SecondMenagersAndTrains, 3, 8, 9);
 
                 SheetFormatting();
                 ClearMemory();
@@ -404,7 +404,6 @@ namespace Ewidencja
 
             for (int i = 3; i <= rowCount; i++)
             {
-
                 String firstFormula = "=JEŻELI(CZY.BŁĄD(WYSZUKAJ.PIONOWO(LEWY(F" + i + "&\"*\"&E" + i + ",3)&\"*\"&PRAWY(N" + i + "&\"*\"&O" + i + ",3)&\"*\"&LEWY(E" + i + ",5)&\"*\",$B$3:$B$229&$C$3:$C$229,1,0)=\"\"),\"niezgodność\",\"OK\")";
                 String secondFormula = "=JEŻELI(CZY.BŁĄD(WYSZUKAJ.PIONOWO(LEWY(I" + i + "&\"*\"&H" + i + ",3)&\"*\"&PRAWY(Q" + i + "&\"*\"&R" + i + ",3)&\"*\"&LEWY(H" + i + ",5)&\"*\",$B$3:$B$229&$C$3:$C$229,1,0)=\"\"),\"niezgodność\",\"OK\")";
                 String thirdFormula = "=LICZ.JEŻELI(G3:G411,\"niezgodność\")+LICZ.JEŻELI(J3:J411,\"niezgodność\")";
