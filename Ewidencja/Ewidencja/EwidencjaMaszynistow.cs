@@ -378,8 +378,8 @@ namespace Ewidencja
 
             xlWorksheet.Columns[1].ColumnWidth = 4;
             xlWorksheet.Rows[1].RowHeight = 40;
-            xlWorksheet.Columns[2].ColumnWidth = 35;
-            xlWorksheet.Columns[3].ColumnWidth = 40;
+            xlWorksheet.Columns[2].ColumnWidth = 30;
+            xlWorksheet.Columns[3].ColumnWidth = 70;
             xlWorksheet.Columns[4].ColumnWidth = 16;
             xlWorksheet.Columns[5].ColumnWidth = 20;
             xlWorksheet.Columns[6].ColumnWidth = 25;

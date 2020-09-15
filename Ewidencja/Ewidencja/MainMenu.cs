@@ -19,14 +19,15 @@ namespace Ewidencja
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EwidencjaMaszynistow maszynisci = new EwidencjaMaszynistow();
-            maszynisci.Show();
+            var maszynisci = new EwidencjaMaszynistow();
+            maszynisci.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            EwidencjaKierownikow kierownicy = new EwidencjaKierownikow();
-            kierownicy.Show();
+            var kierownicy = new EwidencjaKierownikow();
+            kierownicy.ShowDialog();
+
         }
     }
 }
